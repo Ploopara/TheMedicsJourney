@@ -3,7 +3,9 @@ include string
 main(){
   trap quit INT # Quits cleanly rather than crashing out on ctrl-c
   mkdir -p ~/.medicsjourney
-  bootScreenShort
+  if [[ "$1" != "--no-intro" ]]; then
+      bootScreenShort
+  fi
   clear
   mainMenu
 }
@@ -14,7 +16,8 @@ quit(){
     writeSaveData
   fi
   echo "${colorsCyan}Goodbye!${colorsReset}"
-  tput cnorm
+  sleep 3s
+  reset
   exit
 }
 
