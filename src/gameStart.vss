@@ -1,11 +1,15 @@
 newGame(){
   resetScreen
   export LEVELSAVE="0"
-  spinCounter "Writing Save Data "
   writeSaveData
   loadLevel 1
 }
 
 writeSaveData() {
+  spinCounter "Writing Save Data "
   echo "LEVELSAVE=\"$LEVELSAVE\"" > ~/.medicsjourney/savestate
+  if isSet "$LVL1_CHS1_ANS"
+  then
+    echo "LVL1_CHS1_ANS=\"$LVL1_CHS1_ANS\"" >> ~/.medicsjourney/savestate
+  fi
 }

@@ -15,7 +15,19 @@ main(){
 
 quit(){
   clear
+  if [[ "$LEVELSAVE" != "0" && "$LEVELSAVE" != "" ]]; then
+    writeSaveData
+  fi
   echo "Goodbye!"
   tput cnorm
   exit
+}
+
+isSet(){
+    if [ "$1" == "" ]
+    then
+      return 1
+    else
+      return 0
+    fi
 }
