@@ -17,6 +17,13 @@ slowText(){
   done
   echo
 }
+
+ifSleep(){
+  if [[ "$1" != "" && "$1" != "0" ]] ; then
+    sleep $2
+  fi
+}
+
 spinCounter(){
   echo -ne "\r$1 |"
   sleep 0.1s
