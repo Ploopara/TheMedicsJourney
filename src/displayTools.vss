@@ -10,7 +10,13 @@ invalidOption(){
   sleep 2s
   echo -ne "\033[2K\r"
 }
-
+slowText(){
+  for (( i=0; i<${#1}; i++ )); do
+    echo -n "${1:$i:1}"
+    sleep 0.1s
+  done
+  echo
+}
 spinCounter(){
   echo -ne "\r$1 |"
   sleep 0.1s
