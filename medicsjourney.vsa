@@ -24,26 +24,21 @@ append(){
 main(){
   trap quit INT # Quits cleanly rather than crashing out on ctrl-c
   mkdir -p ~/.medicsjourney
-  if [[ ! -f ~/.medicsjourney/firstRun ]]; then
-    bootScreen
-    touch ~/.medicsjourney/firstRun
-  else
-    bootScreenShort
-  fi
+  bootScreenShort
   clear
   mainMenu
 }
 
 quit(){
   clear
-  echo "Goodbye!"
+  echo "${colorsCyan}Goodbye!${colorsReset}"
   tput cnorm
   exit
 }
 level1(){
   echo "${colorsGreen}Chapter 1: Running${colorsReset}"
   sleep 1s
-  echo "${colorsLightMagenta}<INSERT CHARACTER NAME HERE>: Crap! I'm going to be late for school."
+  echo "${colorsLightMagenta}Crystal: Crap! I'm going to be late for school."
   sleep 2s
   echo "${colorsGreen}You'd yet again woken up 30 mins late, you really need to investigate that alarm clock but you don't have the time"
   sleep 1s
@@ -60,6 +55,7 @@ loadLevel(){
 }
 newGame(){
   resetScreen
+  bootScreen
   export LEVELSAVE="0"
   spinCounter "Writing Save Data "
   writeSaveData
@@ -79,7 +75,7 @@ bootScreen(){
   sleep 1s
   echo "A Game Written In Bash,"
   sleep 1s
-  echo "${colorsLightMagenta} <INSERT MAIN CHARACTER NAME HERE> in:"
+  echo "${colorsLightMagenta}Crystal in:"
   echo ${colorsGreen}
   echo '_|      _|                  _|  _|                                _|'
   echo '_|_|  _|_|    _|_|      _|_|_|        _|_|_|    _|_|_|            _|    _|_|    _|    _|  _|  _|_|  _|_|_|      _|_|    _|    _|'
@@ -90,14 +86,17 @@ bootScreen(){
   echo '                                                                                                                          _|_|' "   ${colorsRed}$APP_VERSION${colorsReset}"
   echo
   sleep 5s
-  echo "You're in training to be a field medic in the <INSERT NATION HERE> army"
+  echo "You're in training to be a field medic in the Fareheim army"
   sleep 2s
-  echo "Today you're running a bit late as it took you too long to get out of bed"
+  echo "You're running a bit late to training "
   sleep 2s
-  echo "Follow along in this Half-Lifeesque story as the world turns into goo."
+  echo "No worries though, teach won't be mad."
   sleep 2s
-  echo "Oh and lieutenant Dan's legs get blown off."
+  echo "You usually come in late anyways, today is no different."
+  sleep 2s
+  echo "other than the fact that today is the day of the firearms and strength exam" # HOLY SHIIIIITTT
   sleep 6.9s
+
   clear
   tput cnorm # Show Cursor Again
 }
@@ -112,7 +111,7 @@ bootScreenShort(){
   sleep 1s
   echo "A Game Written In Bash,"
   sleep 1s
-  echo "${colorsLightMagenta} <INSERT MAIN CHARACTER NAME HERE> in:"
+  echo "${colorsLightMagenta}Crystal in:"
   echo ${colorsGreen}
   echo '_|      _|                  _|  _|                                _|'
   echo '_|_|  _|_|    _|_|      _|_|_|        _|_|_|    _|_|_|            _|    _|_|    _|    _|  _|  _|_|  _|_|_|      _|_|    _|    _|'

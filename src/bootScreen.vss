@@ -45,7 +45,7 @@ bootScreenShort(){
   sleep 1s
   echo "A Game Written In Bash,"
   sleep 1s
-  echo "${colorsLightMagenta} <INSERT MAIN CHARACTER NAME HERE> in:"
+  echo "${colorsLightMagenta}Crystal in:"
   echo ${colorsGreen}
   echo '_|      _|                  _|  _|                                _|'
   echo '_|_|  _|_|    _|_|      _|_|_|        _|_|_|    _|_|_|            _|    _|_|    _|    _|  _|  _|_|  _|_|_|      _|_|    _|    _|'

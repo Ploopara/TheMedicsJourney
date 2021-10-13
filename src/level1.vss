@@ -1,12 +1,55 @@
 level1(){
+  LEVELSAVE=1
+
+
   echo "${colorsGreen}Chapter 1: Running${colorsReset}"
   sleep 1s
-  echo "${colorsLightMagenta}Crystal: Crap! I'm going to be late for school."
+  echo "${colorsLightMagenta}You: Crap! I'm going to be late to training."
   sleep 2s
-  echo "${colorsGreen}You'd yet again woken up 30 mins late, you really need to investigate that alarm clock but you don't have the time"
-  sleep 1s
+  echo "${colorsGreen}You'd yet again woken up 15 mins late, you really need to invest in an alarm clock but you have the poor"
+  sleep 4.5s
   echo "${colorsCyan}Phone: *BZZT*"
   sleep 1.5s
-  echo "${colorsGreen}Your friends have texted you to find out where you are."
-  # Note, I am awful at story making so someone needs to edit this (or just start again)
+  echo "${colorsLightGrey}Kira: Where are you? The exam is about to start"
+  echo "${colorsGreen}You've been texted by your friend Kira, she wants to know where you are."
+  echo
+  echo "${colorsMagenta}Choose A Response To Send To Kira"
+  echo "${colorsGreen}1.${colorsMagenta} Say \"sorry lol, woke up late :')\" "
+  echo "${colorsGreen}2.${colorsMagenta} Say \"I'm at home, I just got up, and I'll be there in a minute\""
+  echo "${colorsGreen}3.${colorsMagenta} Blank her, you don't have much time so you'll have to talk later.${colorsReset}"
+
+  if ! isSet "$LVL1_CHS1_ANS"; then
+    while [[ "$GO" == "" ]]; do
+      read -s -n1 answer
+      lvlChs1Handler
+    done
+    LVL1_CHS1_ANS=$answer
+  else
+    lvlChs1Handler $LVL1_CHS1_ANS
+  fi
+}
+
+lvlChs1Handler(){
+  case $1 in
+      "1")
+        echo
+        echo -ne "\033[44;97m"
+        echo " ╭─────────────────────────────╮"
+        echo " │ sorry lol, woke up late :') │"
+        echo "╱╰─────────────────────────────╯"
+        echo "${colorsReset}"
+        ;;
+      "2")
+        echo
+        echo -ne "\033[44;97m"
+        echo " ╭───────────────────────────────────────────────────────────╮"
+        echo " │ I'm at home, I just got up, and I'll be there in a minute │"
+        echo "╱╰───────────────────────────────────────────────────────────╯"
+        echo ${colorsReset}
+      "3")
+        echo "${colorsRed}You just ignore Kira and go on with your day, you'll see her later anyway${colorsReset}"
+      *)
+        invalidOption "Incorrect Answer, Valid Answers are a number from 1 to 3"
+        ;;
+    esac
 }

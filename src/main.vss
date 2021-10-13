@@ -3,12 +3,7 @@ include string
 main(){
   trap quit INT # Quits cleanly rather than crashing out on ctrl-c
   mkdir -p ~/.medicsjourney
-  if [[ ! -f ~/.medicsjourney/firstRun ]]; then
-    bootScreen
-    touch ~/.medicsjourney/firstRun
-  else
-    bootScreenShort
-  fi
+  bootScreenShort
   clear
   mainMenu
 }
@@ -18,7 +13,7 @@ quit(){
   if [[ "$LEVELSAVE" != "0" && "$LEVELSAVE" != "" ]]; then
     writeSaveData
   fi
-  echo "Goodbye!"
+  echo "${colorsCyan}Goodbye!${colorsReset}"
   tput cnorm
   exit
 }
