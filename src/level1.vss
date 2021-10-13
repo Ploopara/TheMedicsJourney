@@ -23,18 +23,18 @@ level1(){
   if ! isSet "$LVL1_CHS1_ANS"; then
     while [[ "$GO" == "" ]]; do
       read -s -n1 answer
-      if lvlChs1Handler $answer
+      if lvl1Chs1Handler $answer
       then
         GO="true"
       fi
     done
     LVL1_CHS1_ANS=$answer
   else
-    lvlChs1Handler $LVL1_CHS1_ANS
+    lvl1Chs1Handler $LVL1_CHS1_ANS
   fi
 }
 
-lvlChs1Handler(){
+lvl1Chs1Handler(){
   case "$1" in
       "1")
         echo
