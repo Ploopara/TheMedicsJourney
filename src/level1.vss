@@ -1,19 +1,21 @@
 level1(){
   LEVELSAVE=1
 
-
   echo "${colorsGreen}Chapter 1: Running${colorsReset}"
-  sleep 1s
+  ifSleep $LVL1_CHS1_ANS 1
   echo "${colorsLightMagenta}You: Crap! I'm going to be late to training."
-  sleep 2s
+  ifSleep $LVL1_CHS1_ANS 2
   echo "${colorsGreen}You'd yet again woken up 15 mins late, you really need to invest in an alarm clock but you have the poor"
-  sleep 4.5s
+  ifSleep $LVL1_CHS1_ANS 4.5
   echo "${colorsCyan}Phone: *BZZT*"
-  sleep 1.5s
+  ifSleep $LVL1_CHS1_ANS 1.5
   echo "${colorsLightGrey}Kira: Where are you? The exam is about to start"
+  ifSleep $LVL1_CHS1_ANS 1
   echo "${colorsGreen}You've been texted by your friend Kira, she wants to know where you are."
+  ifSleep $LVL1_CHS1_ANS 1
   echo
   echo "${colorsMagenta}Choose A Response To Send To Kira"
+  ifSleep $LVL1_CHS1_ANS 1
   echo "${colorsGreen}1.${colorsMagenta} Say \"sorry lol, woke up late :')\" "
   echo "${colorsGreen}2.${colorsMagenta} Say \"I'm at home, I just got up, and I'll be there in a minute\""
   echo "${colorsGreen}3.${colorsMagenta} Blank her, you don't have much time so you'll have to talk later.${colorsReset}"
@@ -21,7 +23,10 @@ level1(){
   if ! isSet "$LVL1_CHS1_ANS"; then
     while [[ "$GO" == "" ]]; do
       read -s -n1 answer
-      lvlChs1Handler
+      if lvlChs1Handler $answer
+      then
+        GO="true"
+      fi
     done
     LVL1_CHS1_ANS=$answer
   else
@@ -30,26 +35,27 @@ level1(){
 }
 
 lvlChs1Handler(){
-  case $1 in
+  case "$1" in
       "1")
         echo
-        echo -ne "\033[44;97m"
         echo " ╭─────────────────────────────╮"
-        echo " │ sorry lol, woke up late :') │"
+        echo -e " │\033[44;97m sorry lol, woke up late :') ${colorsReset}│"
         echo "╱╰─────────────────────────────╯"
-        echo "${colorsReset}"
+        echo
         ;;
       "2")
         echo
-        echo -ne "\033[44;97m"
         echo " ╭───────────────────────────────────────────────────────────╮"
-        echo " │ I'm at home, I just got up, and I'll be there in a minute │"
+        echo -e " │\033[44;97m I'm at home, I just got up, and I'll be there in a minute ${colorsReset}│"
         echo "╱╰───────────────────────────────────────────────────────────╯"
-        echo ${colorsReset}
+        echo
+        ;;
       "3")
         echo "${colorsRed}You just ignore Kira and go on with your day, you'll see her later anyway${colorsReset}"
+        ;;
       *)
         invalidOption "Incorrect Answer, Valid Answers are a number from 1 to 3"
+        return 1
         ;;
     esac
 }
