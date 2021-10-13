@@ -1,3 +1,5 @@
+include core
+
 newGame(){
   resetScreen
   bootScreen
@@ -13,4 +15,19 @@ writeSaveData() {
   then
     echo "LVL1_CHS1_ANS=\"$LVL1_CHS1_ANS\"" >> ~/.medicsjourney/savestate
   fi
+}
+
+loadSaveData(){
+  spinCounter "Loading Save Data "
+  if [[ ! -e ~/.medicsjourney/savestate ]]; then
+    throw "Missing save data, game can not continue"
+  fi
+  source ~/.medicsjourney/savestate
+}
+
+loadGame(){
+  resetScreen
+  bootScreenInstant
+  loadSaveData
+  loadLevel $LEVELSAVE
 }
