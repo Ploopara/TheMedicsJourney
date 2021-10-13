@@ -29,17 +29,11 @@ mainMenu() {
           loadGame
           GO="true"
         else
-          echo -ne "\033[2K\r"
-          echo -n "No Save, Please Create New Game First"
-          sleep 2s
-          echo -ne "\033[2K\r"
+          invalidOption "No Save, Please Create New Game First"
         fi
         ;;
       "3")
-        echo -ne "\033[2K\r"
-        echo -n "Not Yet Implemented"
-        sleep 2s
-        echo -ne "\033[2K\r"
+        invalidOption "Not Yet Implemented"
         ;;
       "4")
         creditsScreen

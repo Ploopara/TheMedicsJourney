@@ -4,6 +4,13 @@ resetScreen(){
   echo ${colorsReset}
 }
 
+invalidOption(){
+  echo -ne "\033[2K\r"
+  echo -n "$1"
+  sleep 2s
+  echo -ne "\033[2K\r"
+}
+
 spinCounter(){
   echo -ne "\r$1 |"
   sleep 0.1s
