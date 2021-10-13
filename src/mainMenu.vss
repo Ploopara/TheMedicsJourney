@@ -13,9 +13,10 @@ mainMenu() {
   else
     echo "${colorsGrey}2. Load Game"
   fi
-    echo "${colorsGreen}3. ${colorsMagenta}Options"
-    echo "${colorsGreen}4. ${colorsMagenta}Credits"
-    echo "${colorsGreen}5. ${colorsMagenta}Quit"
+  echo "${colorsGreen}3. ${colorsMagenta}Options"
+  echo "${colorsGreen}4. ${colorsMagenta}Credits"
+  echo "${colorsGreen}5. ${colorsMagenta}Quit"
+  unset LEVELSAVE
   while [[ "$GO" == "" ]]; do
     tput civis
     read -s -n1 answer
