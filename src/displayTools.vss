@@ -1,0 +1,26 @@
+resetScreen(){
+  clear
+  tput cnorm
+  echo ${colorsReset}
+}
+
+spinCounter(){
+  echo -ne "\r$1 |"
+  sleep 0.1s
+  echo -ne "\r$1 /"
+  sleep 0.1s
+  echo -ne "\r$1 -"
+  sleep 0.1s
+  echo -ne "\r$1 \\"
+  sleep 0.1s
+  echo -ne "\r$1 |"
+  sleep 0.1s
+  echo -ne "\r$1 /"
+  sleep 0.1s
+  echo -ne "\r$1 -"
+  sleep 0.1s
+  echo -ne "\r$1 \\"
+  sleep 0.1s
+  echo -e "\r$1  "
+  sleep 0.1s
+}

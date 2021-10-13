@@ -1,0 +1,134 @@
+bootScreen(){
+  # TODO: Fix the dogshit spelling and capitalisation
+  clear
+  tput civis # Make Cursor invisible
+
+  sleep 0.75s
+  echo "Henry (Zaprit) And Imogen Asbridge (Ploopara)"
+  echo "Present, "
+  sleep 1s
+  echo "A Game Written In Bash,"
+  sleep 1s
+  echo "${colorsLightMagenta}Crystal in:"
+  echo ${colorsGreen}
+  echo '_|      _|                  _|  _|                                _|'
+  echo '_|_|  _|_|    _|_|      _|_|_|        _|_|_|    _|_|_|            _|    _|_|    _|    _|  _|  _|_|  _|_|_|      _|_|    _|    _|'
+  echo '_|  _|  _|  _|_|_|_|  _|    _|  _|  _|        _|_|                _|  _|    _|  _|    _|  _|_|      _|    _|  _|_|_|_|  _|    _|'
+  echo '_|      _|  _|        _|    _|  _|  _|            _|_|      _|    _|  _|    _|  _|    _|  _|        _|    _|  _|        _|    _|'
+  echo '_|      _|    _|_|_|    _|_|_|  _|    _|_|_|  _|_|_|          _|_|      _|_|      _|_|_|  _|        _|    _|    _|_|_|    _|_|_|'
+  echo '                                                                                                                              _|'
+  echo '                                                                                                                          _|_|' "   ${colorsRed}$APP_VERSION${colorsReset}"
+  echo
+  sleep 5s
+  echo "You're in training to be a field medic in the Fareheim army"
+  sleep 2s
+  echo "You're running a bit late to training "
+  sleep 2s
+  echo "No worries though, teach won't be mad."
+  sleep 2s
+  echo "You usually come in late anyways, today is no different."
+  sleep 2s
+  echo "other than the fact that today is the day of the firearms and strength exam" # HOLY SHIIIIITTT
+  sleep 6.9s
+
+  clear
+  tput cnorm # Show Cursor Again
+}
+bootScreenShort(){
+
+  clear
+  tput civis # Make Cursor invisible
+
+  sleep 0.75s
+  echo "Henry (Zaprit) And Imogen Asbridge (Ploopara)"
+  echo "Present, "
+  sleep 1s
+  echo "A Game Written In Bash,"
+  sleep 1s
+  echo "${colorsLightMagenta} <INSERT MAIN CHARACTER NAME HERE> in:"
+  echo ${colorsGreen}
+  echo '_|      _|                  _|  _|                                _|'
+  echo '_|_|  _|_|    _|_|      _|_|_|        _|_|_|    _|_|_|            _|    _|_|    _|    _|  _|  _|_|  _|_|_|      _|_|    _|    _|'
+  echo '_|  _|  _|  _|_|_|_|  _|    _|  _|  _|        _|_|                _|  _|    _|  _|    _|  _|_|      _|    _|  _|_|_|_|  _|    _|'
+  echo '_|      _|  _|        _|    _|  _|  _|            _|_|      _|    _|  _|    _|  _|    _|  _|        _|    _|  _|        _|    _|'
+  echo '_|      _|    _|_|_|    _|_|_|  _|    _|_|_|  _|_|_|          _|_|      _|_|      _|_|_|  _|        _|    _|    _|_|_|    _|_|_|'
+  echo '                                                                                                                              _|'
+  echo '                                                                                                                          _|_|' "   ${colorsRed}$APP_VERSION${colorsReset}"
+  sleep 2s
+  tput cnorm
+}
+bootScreenInstant(){
+  clear
+  echo -n ${colorsGreen}
+  echo '_|      _|                  _|  _|                                _|'
+  echo '_|_|  _|_|    _|_|      _|_|_|        _|_|_|    _|_|_|            _|    _|_|    _|    _|  _|  _|_|  _|_|_|      _|_|    _|    _|'
+  echo '_|  _|  _|  _|_|_|_|  _|    _|  _|  _|        _|_|                _|  _|    _|  _|    _|  _|_|      _|    _|  _|_|_|_|  _|    _|'
+  echo '_|      _|  _|        _|    _|  _|  _|            _|_|      _|    _|  _|    _|  _|    _|  _|        _|    _|  _|        _|    _|'
+  echo '_|      _|    _|_|_|    _|_|_|  _|    _|_|_|  _|_|_|          _|_|      _|_|      _|_|_|  _|        _|    _|    _|_|_|    _|_|_|'
+  echo '                                                                                                                              _|'
+  echo '                                                                                                                          _|_|' "   ${colorsRed}$APP_VERSION${colorsReset}"
+}
+
+creditsScreen(){
+  clear
+  echo -n ${colorsGreen}
+  echo '_|      _|                  _|  _|                                _|'
+  echo '_|_|  _|_|    _|_|      _|_|_|        _|_|_|    _|_|_|            _|    _|_|    _|    _|  _|  _|_|  _|_|_|      _|_|    _|    _|'
+  echo '_|  _|  _|  _|_|_|_|  _|    _|  _|  _|        _|_|                _|  _|    _|  _|    _|  _|_|      _|    _|  _|_|_|_|  _|    _|'
+  echo '_|      _|  _|        _|    _|  _|  _|            _|_|      _|    _|  _|    _|  _|    _|  _|        _|    _|  _|        _|    _|'
+  echo '_|      _|    _|_|_|    _|_|_|  _|    _|_|_|  _|_|_|          _|_|      _|_|      _|_|_|  _|        _|    _|    _|_|_|    _|_|_|'
+  echo '                                                                                                                              _|'
+  echo '                                                                                                                          _|_|' "   ${colorsRed}$APP_VERSION${colorsReset}"
+  echo
+  sleep 1s
+  echo "Personel:"
+  echo "Henry Asbridge: Lead Developer"
+  sleep 0.8s
+  echo "Imogen Asbridge: Story Writer"
+  sleep 0.8s
+  echo
+  sleep 1s
+  echo "Technologies Used:"
+  sleep 1s
+  echo "Atom (https://atom.io): Used to develop the game"
+  sleep 1s
+  echo "Github (https://github.com): Used to host this pile of crap"
+  sleep 1s
+  echo "VScript (https://github.com/Zaprit/VScript): Used to abstract this mess of bash code"
+  sleep 1s
+  echo "Bash (https://www.gnu.org/software/bash/) the delightfully adequate shell used to code this pile of crap"
+  sleep 1s
+  echo "Git (https://git-scm.com): source control used in this project"
+  sleep 2s
+  echo
+  echo "Special Thanks To:"
+  sleep 1s
+  echo "https://ascii-art-generator.org, without this I would have spent way too long on the banner"
+  sleep 1s
+  echo "Apple Inc. for making a nice OS, and a MacBook for me to code this on"
+  sleep 1s
+  echo "The team at Bell Labs in the 60s for making unix that led to the technologies that made this possible™"
+  sleep 0.8s
+  echo
+  sleep 0.8s
+  echo
+  sleep 0.8s
+  echo
+  sleep 0.8s
+  echo " ________________________________"
+  sleep 0.8s
+  echo '< Made With The Power Of Boredom >'
+  sleep 0.8s
+  echo " --------------------------------"
+  sleep 0.8s
+  echo "      \   ^__^ "
+  sleep 0.8s
+  echo "       \  (oo)\_______"
+  sleep 0.8s
+  echo '          (__)\       )\/\'
+  sleep 0.8s
+  echo '              ||----w |'
+  sleep 0.8s
+  echo '              ||     ||'
+  sleep 10s
+}

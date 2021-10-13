@@ -1,0 +1,21 @@
+include string
+
+main(){
+  trap quit INT # Quits cleanly rather than crashing out on ctrl-c
+  mkdir -p ~/.medicsjourney
+  if [[ ! -f ~/.medicsjourney/firstRun ]]; then
+    bootScreen
+    touch ~/.medicsjourney/firstRun
+  else
+    bootScreenShort
+  fi
+  clear
+  mainMenu
+}
+
+quit(){
+  clear
+  echo "Goodbye!"
+  tput cnorm
+  exit
+}

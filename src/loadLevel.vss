@@ -1,0 +1,7 @@
+loadLevel(){
+  spinCounter "Loading Level $1 "
+  echo "Level Loaded, Have Fun."
+  sleep 1s
+  clear
+  level$1
+}

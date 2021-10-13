@@ -1,0 +1,12 @@
+level1(){
+  echo "${colorsGreen}Chapter 1: Running${colorsReset}"
+  sleep 1s
+  echo "${colorsLightMagenta}Crystal: Crap! I'm going to be late for school."
+  sleep 2s
+  echo "${colorsGreen}You'd yet again woken up 30 mins late, you really need to investigate that alarm clock but you don't have the time"
+  sleep 1s
+  echo "${colorsCyan}Phone: *BZZT*"
+  sleep 1.5s
+  echo "${colorsGreen}Your friends have texted you to find out where you are."
+  # Note, I am awful at story making so someone needs to edit this (or just start again)
+}

@@ -1,0 +1,58 @@
+mainMenu() {
+  if [[ -f ~/.medicsjourney/savestate ]]; then
+    source ~/.medicsjourney/savestate
+  fi
+  bootScreenInstant
+
+  echo "${colorsRed}Main Menu:"
+  echo "${colorsGreen}1. ${colorsMagenta}New Game"
+
+  if [[ "$LEVELSAVE" != "" ]]; then
+    echo "${colorsGreen}2. ${colorsMagenta}Load Game"
+
+  else
+    echo "${colorsGrey}2. Load Game"
+  fi
+    echo "${colorsGreen}3. ${colorsMagenta}Options"
+    echo "${colorsGreen}4. ${colorsMagenta}Credits"
+    echo "${colorsGreen}5. ${colorsMagenta}Quit"
+  while [[ "$GO" == "" ]]; do
+    tput civis
+    read -s -n1 answer
+    case $answer in
+      "1")
+        newGame
+        GO="true"
+        ;;
+      "2")
+        if [[ $LEVELSAVE != "" ]]; then
+          loadGame
+          GO="true"
+        else
+          echo -ne "\033[2K\r"
+          echo -n "No Save, Please Create New Game First"
+          sleep 2s
+          echo -ne "\033[2K\r"
+        fi
+        ;;
+      "3")
+        echo -ne "\033[2K\r"
+        echo -n "Not Yet Implemented"
+        sleep 2s
+        echo -ne "\033[2K\r"
+        ;;
+      "4")
+        creditsScreen
+        mainMenu
+        GO="true"
+        ;;
+      *)
+        if echo {"5","q","e"} | grep $answer; then
+          quit
+        fi
+        echo -ne "\033[2K\r"
+        ;;
+    esac
+  done
+  tput cnorm
+}

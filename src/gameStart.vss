@@ -1,0 +1,11 @@
+newGame(){
+  resetScreen
+  export LEVELSAVE="0"
+  spinCounter "Writing Save Data "
+  writeSaveData
+  loadLevel 1
+}
+
+writeSaveData() {
+  echo "LEVELSAVE=\"$LEVELSAVE\"" > ~/.medicsjourney/savestate
+}
